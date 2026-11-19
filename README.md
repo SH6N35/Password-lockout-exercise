@@ -39,3 +39,25 @@ A hands-on homelab simulation covering end-to-end Tier 1/Tier 2 identity support
 * **AD Lockout Checkbox Behavior:** In ADUC's **Account** tab, the **Unlock account** checkbox is unchecked by default; checking it and applying clears the lockout flag when the account is locked.
 * **Out-of-Band Credential Hygiene:** Temporary passwords should be unique per incident, short-lived, paired with forced rotation at next logon, and delivered outside email/ticket notes.
 * **ITSM Metrics & Triage:** Deliberately aligning **Impact**, **Urgency**, and **Total duration** (`0h10`) helps keep SLA queues and reporting accurate.
+
+## 📸 Lab Evidence
+
+### 1. Initial Ticket in GLPI
+Ticket `#52` (`Password reset`) reviewed in GLPI under `Access & Identity > Password Reset / MFA` prior to resolution.
+![Unresolved Ticket](Unresolved%20Ticket.png)
+
+### 2. Workstation Sign-In Lockout Symptom
+Windows 11 login screen showing failed/delayed authentication attempts during the lockout scenario for `Shane R. Goodman`.
+![Account Lockout Screen](Account%20lock%20out.png)
+
+### 3. Locked Account State in Active Directory
+Account lockout state verified on the `goodmans` user object in Active Directory Users and Computers (ADUC).
+![Locked User Account](Locked%20user%20account.png)
+
+### 4. Account Unlock & Password Reset
+Account unlocked and temporary password configured with mandatory change at next logon in ADUC.
+![Reset Password](Reset%20password.png)
+
+### 5. Resolved & Closed Ticket in GLPI
+Ticket `#52` updated with resolution notes, confirmed by the user, and closed after `0h10` of logged duration.
+![Resolved Ticket](Resolved%20Ticket.png)
